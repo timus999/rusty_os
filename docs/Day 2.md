@@ -1,3 +1,8 @@
+
+(May 8 2026)
+
+---
+
 This is the second day in my "writing my own os in Rust" - rusty_os.
 
 Today, There was so much to learn. As I was going through the https://os.phil-opp.com/minimal-rust-kernel/ blog_02, there was so many topics that i needed to cover.
@@ -97,7 +102,7 @@ This setting specifies that the target doesn't support stack unwinding on panic,
 "disable-redzone": true,
 ```
 
-I'm writing a kernel, so I'll need to handle interrupts at some point. To do that safely, I had to disable a certain stack pointer optimization called the "red zone", because it would cause stack corruption otherwise.
+I'm writing a kernel, so I'll need to handle interrupts at some point. To do that safely, I had to disable a certain stack pointer optimization called the ["red zone"](https://os.phil-opp.com/red-zone/), because it would cause stack corruption otherwise.
 
 ```json
 "features": "-mmx,-sse,+soft-float",
