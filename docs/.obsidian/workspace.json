@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day 3.md",
+                "file": "topics/serial_port.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day 3"
+              "title": "serial_port"
             }
           }
         ],
@@ -200,11 +200,22 @@
   },
   "active": "64fb75ec7d2e1c4d",
   "lastOpenFiles": [
+    "Day 4.md",
+    "topics/serial_port.md",
+    "Screenshot From 2026-05-10 11-01-25.png",
+    "Screenshot From 2026-05-10 10-57-04.png",
+    "Screenshot From 2026-05-10 10-56-02.png",
+    "topics/io_ports.md",
+    "Screenshot From 2026-05-10 08-46-58.png",
+    "Screenshot From 2026-05-09 16-46-30 1.png",
+    "Screenshot From 2026-05-10 08-45-10.png",
+    "journey.md",
+    "rust_topics/records/inner_attribute.md",
+    "Day 3.md",
     "Screenshot From 2026-05-09 16-48-16.png",
     "Screenshot From 2026-05-09 16-46-30.png",
     "Screenshot From 2026-05-09 16-29-57.png",
     "rust_topics/records/repr.md",
-    "Day 3.md",
     "Day 2.md",
     "Day 1.md",
     "rust_topics/Learned.md",
@@ -212,7 +223,6 @@
     "records",
     "rust_topics/records",
     "rust_topics",
-    "journey.md",
     "Rusty OS Journey.md",
     "topics/vga_text_mode.md",
     "topics/qemu.md",
