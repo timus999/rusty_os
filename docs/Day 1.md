@@ -1,3 +1,8 @@
+
+(May 7 2026)
+
+---
+
 This the first day of my "writing my own os in rust" journey.
 I decided to name my os "rusty_os". Hopefully, This will be fun and full of knowledge, learning journey.
 
