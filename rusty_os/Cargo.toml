@@ -12,8 +12,9 @@ edition = "2024"
 panic = "abort" # disable stack unwinding on panic
 
 [package.metadata.bootimage]
-test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04", "-serial", "stdio"]
+test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04", "-serial", "stdio", "-display", "none"]
 test-success-exit-code = 33 # (0x10 << 1) | 1
+test-timeout = 120
 
 [dependencies]
 bootloader = "0.9"
