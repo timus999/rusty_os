@@ -1,7 +1,8 @@
 use core::fmt;
+use core::ptr::{addr_of_mut, NonNull};
 use lazy_static::lazy_static;
 use spin::Mutex;
-use volatile::Volatile;
+use volatile::VolatilePtr;
 
 #[allow(dead_code)] // disable warning for unused vairant
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -48,14 +49,19 @@ const BUFFER_WIDTH: usize = 80;
 
 #[repr(transparent)] // ensures it also has same memory layout
 struct Buffer {
-    chars: [[Volatile<ScreenChar>; BUFFER_WIDTH]; BUFFER_HEIGHT],
+    chars: [[ScreenChar; BUFFER_WIDTH]; BUFFER_HEIGHT], // remove old Volatile
 }
 
 pub struct Writer {
     column_position: usize,
     color_code: ColorCode,
-    buffer: &'static mut Buffer,
+    buffer: VolatilePtr<'static, Buffer>, // Wrap with VolatilePtr
 }
+
+// VolatilePtr is Send/Sync because it only holds a NonNull pointer
+// VGA buffer access is safe from multiple threads as long as we use the Mutex
+unsafe impl Send for Writer {}
+unsafe impl Sync for Writer {}
 
 impl fmt::Write for Writer {
     fn write_str(&mut self, s: &str) -> fmt::Result {
@@ -65,6 +71,15 @@ impl fmt::Write for Writer {
 }
 
 impl Writer {
+    
+    fn char_ptr(&mut self, row: usize, col: usize) -> VolatilePtr<'_, ScreenChar> {
+        unsafe {
+            let buffer_ptr = self.buffer.as_raw_ptr().as_ptr();
+            let row_ptr = addr_of_mut!((*buffer_ptr).chars[row]);
+            let char_ptr = addr_of_mut!((*row_ptr)[col]);
+            VolatilePtr::new(NonNull::new_unchecked(char_ptr))
+        }
+    }
     pub fn write_byte(&mut self, byte: u8) {
         match byte {
             b'\n' => self.new_line(),
@@ -76,7 +91,7 @@ impl Writer {
                 let col = self.column_position;
 
                 let color_code = self.color_code;
-                self.buffer.chars[row][col].write(ScreenChar {
+                self.char_ptr(row, col).write(ScreenChar {
                     ascii_character: byte,
                     color_code,
                 });
@@ -99,8 +114,8 @@ impl Writer {
     fn new_line(&mut self) {
         for row in 1..BUFFER_HEIGHT {
             for col in 0..BUFFER_WIDTH {
-                let character = self.buffer.chars[row][col].read();
-                self.buffer.chars[row - 1][col].write(character);
+                let character = self.char_ptr(row, col).read();
+                self.char_ptr(row - 1, col).write(character);
             }
         }
 
@@ -114,7 +129,7 @@ impl Writer {
             color_code: self.color_code,
         };
         for col in 0..BUFFER_WIDTH {
-            self.buffer.chars[row][col].write(blank);
+            self.char_ptr(row, col).write(blank);
         }
     }
 }
@@ -123,7 +138,7 @@ lazy_static! {
     pub static ref WRITER: Mutex<Writer> = Mutex::new(Writer {
         column_position: 0,
         color_code: ColorCode::new(Color::Green, Color::Black),
-        buffer: unsafe { &mut *(0xB8000 as *mut Buffer) },
+        buffer: unsafe { VolatilePtr::new(NonNull::new_unchecked(0xB8000 as *mut Buffer)) }, // use VolatilePtr::new()
     });
 }
 
@@ -143,18 +158,3 @@ pub fn _print(args: fmt::Arguments) {
     use core::fmt::Write;
     WRITER.lock().write_fmt(args).unwrap();
 }
-
-// pub fn print_something() {
-//     use core::fmt::Write;
-//     let mut writer = Writer {
-//         column_position: 0,
-//         color_code: ColorCode::new(Color::Yellow, Color::Black),
-//         buffer: unsafe { &mut *(0xb8000 as *mut Buffer) },
-//     };
-
-//     writer.write_byte(b'H');
-//     writer.write_string("ello ");
-//     writer.write_string("World!");
-
-//     write!(writer, "The numbers are {} and {}", 42, 1.0 / 3.0).unwrap();
-// }
