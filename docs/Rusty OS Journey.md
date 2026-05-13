@@ -1,5 +1,6 @@
 
 [[journey]]
+[[dependencies]]
 [[architecture]]
 [[decisions]]
 [[lesson-learned]]
