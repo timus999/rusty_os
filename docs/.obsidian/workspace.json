@@ -39,12 +39,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "topics/Interrupts.md",
+                "file": "topics/privilege_rings_and_segmentation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Interrupts"
+              "title": "privilege_rings_and_segmentation"
             }
           }
         ],
@@ -212,12 +212,20 @@
   },
   "active": "261ecd3c2c074e49",
   "lastOpenFiles": [
-    "Day 7.md",
+    "_Arch2001_04_SegmentationAndPrivilege_06_CallGates.pdf",
+    "_Arch2001_04_SegmentationAndPrivilege_04_SegmentDescriptors.pdf",
+    "_Arch2001_04_SegmentationAndPrivilege_03_GDT&LDT.pdf",
+    "_Arch2001_04_SegmentationAndPrivilege_02_SegmentSelectorAndRegisters.pdf",
+    "Day 9.md",
+    "topics/privilege_rings_and_segmentation.md",
+    "topics/processor_execution_modes.md",
     "journey.md",
-    "Day 6.md",
-    "topics/Interrupts.md",
-    "Day 5.md",
     "dependencies.md",
+    "Day 8.md",
+    "Day 7.md",
+    "topics/Interrupts.md",
+    "Day 6.md",
+    "Day 5.md",
     "Rusty OS Journey.md",
     "Day 4.md",
     "pictures/Screenshot From 2026-05-08 13-24-41.png",
@@ -247,10 +255,7 @@
     "topics/qemu.md",
     "topics/target_specifications.md",
     "topics/bootimage.md",
-    "topics/Modes.md",
     "topics",
-    "Untitled.canvas",
-    "2026-05-07.md",
-    "Welcome.md"
+    "Untitled.canvas"
   ]
 }
