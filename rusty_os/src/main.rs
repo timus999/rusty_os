@@ -12,21 +12,34 @@ use rusty_os::println;
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
+    rusty_os::hlt_loop();
 }
 
 #[cfg(test)]
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     rusty_os::test_panic_handler(info);
+    rusty_os::hlt_loop();
 }
 
 #[unsafe(no_mangle)] // don't mangle the name of this function
 pub extern "C" fn _start() -> ! {
     println!("Hello world");
 
+    rusty_os::init();
+
+    // invoke a breakpoint exception
+    // x86_64::instructions::interrupts::int3();
+
+    // fn stack_overflow() {
+    //     stack_overflow();
+    // }
+
+    // stack_overflow();
+
     #[cfg(test)]
     test_main();
 
-    loop {}
+    println!("It didn't crash!");
+    rusty_os::hlt_loop();
 }

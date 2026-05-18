@@ -179,3 +179,6 @@ Interrupt vectors are conventionally assigned:
 |32-47|Hardware IRQs (PIC)|32: Timer, 33: Keyboard|
 |48-255|Software interrupts / Custom|128: Linux syscall (`int 0x80`)|
 
+---
+
+Each exception has a predefined IDT index. For example, the invalid opcode exception has table index 6 and the page fault exception has table index 14. Thus, the hardware can automatically load the corresponding IDT entry for each exception. The [Exception Table](https://wiki.osdev.org/Exceptions) in the OSDev wiki shows the IDT indexes of all exceptions in the “Vector nr.” column.
