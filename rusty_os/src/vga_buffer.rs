@@ -155,18 +155,26 @@ macro_rules! println {
 #[doc(hidden)]
 pub fn _print(args: fmt::Arguments) {
     use core::fmt::Write;
-    WRITER.lock().write_fmt(args).unwrap();
+    use x86_64::instructions::interrupts;
+
+    interrupts::without_interrupts(|| {
+        WRITER.lock().write_fmt(args).unwrap();
+    })
 }
 #[test_case]
 fn test_println_output() {
+    use x86_64::instructions::interrupts;
     let s = "Some test string that fits on single line";
     println!("{}", s);
-    for (i, c) in s.chars().enumerate() {
-        unsafe {
-            let buffer_ptr = WRITER.lock().buffer.as_raw_ptr().as_ptr();
-            let row_ptr = addr_of_mut!((*buffer_ptr).chars[BUFFER_HEIGHT - 2]);
-            let char_ptr = addr_of_mut!((*row_ptr)[i]);
-            assert_eq!(char::from((*char_ptr).ascii_character), c);
+
+    interrupts::without_interrupts(|| {
+        for (i, c) in s.chars().enumerate() {
+            unsafe {
+                let buffer_ptr = WRITER.lock().buffer.as_raw_ptr().as_ptr();
+                let row_ptr = addr_of_mut!((*buffer_ptr).chars[BUFFER_HEIGHT - 2]);
+                let char_ptr = addr_of_mut!((*row_ptr)[i]);
+                assert_eq!(char::from((*char_ptr).ascii_character), c);
+            }
         }
-    }
+    });
 }

@@ -35,5 +35,5 @@ pub fn test_runner(tests: &[&dyn Fn()]) {
 #[test_case]
 fn should_fail() {
     serial_print!("should_panic::should_fail...\t");
-    // assert_eq!(0, 1);
+    assert_eq!(0, 1);
 }
