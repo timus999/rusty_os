@@ -32,3 +32,8 @@ features = ["spin_no_std"]
 name = "rusty_os"
 test = true
 bench = false
+
+
+[[test]]
+name = "stack_overflow"
+harness = false
