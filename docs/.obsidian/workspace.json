@@ -39,12 +39,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day 12.md",
+                "file": "topics/paging.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day 12"
+              "title": "paging"
             }
           }
         ],
@@ -212,19 +212,21 @@
   },
   "active": "261ecd3c2c074e49",
   "lastOpenFiles": [
-    "Screenshot From 2026-05-18 16-56-15.png",
-    "Screenshot From 2026-05-18 16-47-38 2.png",
-    "Screenshot From 2026-05-18 16-48-13 1.png",
-    "Screenshot From 2026-05-18 16-12-04 1.png",
-    "Screenshot From 2026-05-18 16-47-38 1.png",
-    "qemu-deadlock.png",
-    "Screenshot From 2026-05-18 10-59-33 2.png",
-    "Screenshot From 2026-05-18 16-48-13.png",
-    "Screenshot From 2026-05-18 16-47-38.png",
-    "Screenshot From 2026-05-18 16-12-04.png",
-    "Screenshot From 2026-05-18 16-11-24 1.png",
-    "Day 12.md",
+    "x86_64_pte-1.png",
+    "pictures/Screenshot From 2026-05-18 16-56-15.png",
+    "pictures/Screenshot From 2026-05-18 16-48-13.png",
+    "pictures/Screenshot From 2026-05-18 16-48-13 1.png",
+    "pictures/Screenshot From 2026-05-18 16-47-38.png",
+    "pictures/Screenshot From 2026-05-18 16-47-38 2.png",
+    "pictures/Screenshot From 2026-05-18 16-47-38 1.png",
+    "pictures/Screenshot From 2026-05-18 16-12-04.png",
+    "pictures/Screenshot From 2026-05-18 16-12-04 1.png",
+    "pictures/Screenshot From 2026-05-18 16-11-24.png",
+    "pictures/Screenshot From 2026-05-18 16-11-24 1.png",
+    "Day13.md",
+    "topics/paging.md",
     "journey.md",
+    "Day 12.md",
     "Day 11.md",
     "Rusty OS Journey.md",
     "Day 10.md",
@@ -251,11 +253,9 @@
     "Day 2.md",
     "Day 1.md",
     "rust_topics/Learned.md",
-    "records/repr.md",
     "records",
     "rust_topics/records",
     "rust_topics",
-    "topics/vga_text_mode.md",
     "topics",
     "Untitled.canvas"
   ]
