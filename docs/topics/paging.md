@@ -465,12 +465,13 @@ Page tables themselves are **physically contiguous 4KB pages**. The kernel must
 
 Many kernels map the page tables themselves into virtual memory for easy manipulation:
 
-text
+```text
 
 Reserve a virtual address range (e.g., 0xFFFF800000000000)
 Map it to the physical address of PML4
 Now page tables can be accessed like regular memory:
     PML4[index] = read at virtual_base + index*8
+```
 
 This avoids needing separate physical memory mapping functions for page table access.
 
