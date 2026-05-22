@@ -25,30 +25,18 @@
             "id": "64fb75ec7d2e1c4d",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "pictures/Screenshot From 2026-05-08 13-24-41.png"
-              },
-              "icon": "lucide-image",
-              "title": "Screenshot From 2026-05-08 13-24-41"
-            }
-          },
-          {
-            "id": "261ecd3c2c074e49",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "Day 12.md",
+                "file": "Day 16.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day 12"
+              "title": "Day 16"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -210,8 +198,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "261ecd3c2c074e49",
+  "active": "64fb75ec7d2e1c4d",
   "lastOpenFiles": [
+    "journey.md",
+    "Day 16.md",
+    "Day 15.md",
+    "Screenshot From 2026-05-21 17-18-10.png",
+    "Screenshot From 2026-05-21 16-53-41.png",
+    "Screenshot From 2026-05-21 12-03-28.png",
+    "Screenshot From 2026-05-21 11-36-37.png",
+    "topics/Page_table_Access_Strategies.md",
+    "topics/'Page.md",
+    "pictures/Screenshot From 2026-05-08 13-24-41.png",
+    "topics/Page.md",
+    "Day 12.md",
     "pictures/Screenshot From 2026-05-20 10-38-59.png",
     "pictures/Screenshot From 2026-05-20 10-36-21.png",
     "pictures/Screenshot From 2026-05-20 10-35-47.png",
@@ -222,23 +222,15 @@
     "Day 6.md",
     "Day 5.md",
     "Day 1.md",
-    "journey.md",
     "Day 13.md",
     "Day 11.md",
     "Day 14.md",
     "Screenshot From 2026-05-20 10-38-59.png",
     "Screenshot From 2026-05-20 10-35-47.png",
-    "Screenshot From 2026-05-20 10-36-21.png",
     "Day 2.md",
     "topics/Control Registers.md",
     "topics/Paging Modes.md",
     "topics/paging.md",
-    "x86_64_pte-1.png",
-    "pictures/Screenshot From 2026-05-18 16-56-15.png",
-    "pictures/Screenshot From 2026-05-18 16-48-13.png",
-    "pictures/Screenshot From 2026-05-18 16-48-13 1.png",
-    "pictures/Screenshot From 2026-05-18 16-47-38.png",
-    "Day 12.md",
     "Rusty OS Journey.md",
     "topics/privilege_rings_and_segmentation.md",
     "_Arch2001_04_SegmentationAndPrivilege_06_CallGates.pdf",
@@ -248,11 +240,7 @@
     "topics/processor_execution_modes.md",
     "dependencies.md",
     "topics/Interrupts.md",
-    "Day 4.md",
     "pictures",
-    "topics/serial_port.md",
-    "topics/io_ports.md",
-    "rust_topics/records/inner_attribute.md",
     "records",
     "rust_topics/records",
     "rust_topics",
