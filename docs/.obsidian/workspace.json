@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day 16.md",
+                "file": "Day 17.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day 16"
+              "title": "Day 17"
             }
           }
         ],
@@ -200,8 +200,13 @@
   },
   "active": "64fb75ec7d2e1c4d",
   "lastOpenFiles": [
-    "journey.md",
+    "Screenshot From 2026-05-23 18-43-53.png",
+    "Day 17.md",
+    "Screenshot From 2026-05-23 18-00-12.png",
+    "Untitled.md",
+    "topics/Memory_management.md",
     "Day 16.md",
+    "journey.md",
     "Day 15.md",
     "Screenshot From 2026-05-21 17-18-10.png",
     "Screenshot From 2026-05-21 16-53-41.png",
@@ -226,20 +231,15 @@
     "Day 11.md",
     "Day 14.md",
     "Screenshot From 2026-05-20 10-38-59.png",
-    "Screenshot From 2026-05-20 10-35-47.png",
     "Day 2.md",
     "topics/Control Registers.md",
     "topics/Paging Modes.md",
     "topics/paging.md",
     "Rusty OS Journey.md",
-    "topics/privilege_rings_and_segmentation.md",
     "_Arch2001_04_SegmentationAndPrivilege_06_CallGates.pdf",
     "_Arch2001_04_SegmentationAndPrivilege_04_SegmentDescriptors.pdf",
     "_Arch2001_04_SegmentationAndPrivilege_03_GDT&LDT.pdf",
     "_Arch2001_04_SegmentationAndPrivilege_02_SegmentSelectorAndRegisters.pdf",
-    "topics/processor_execution_modes.md",
-    "dependencies.md",
-    "topics/Interrupts.md",
     "pictures",
     "records",
     "rust_topics/records",
