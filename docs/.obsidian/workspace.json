@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day 17.md",
+                "file": "journey.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day 17"
+              "title": "journey"
             }
           }
         ],
@@ -200,8 +200,8 @@
   },
   "active": "64fb75ec7d2e1c4d",
   "lastOpenFiles": [
-    "Screenshot From 2026-05-23 18-43-53.png",
     "Day 17.md",
+    "Screenshot From 2026-05-23 18-43-53.png",
     "Screenshot From 2026-05-23 18-00-12.png",
     "Untitled.md",
     "topics/Memory_management.md",
@@ -230,7 +230,6 @@
     "Day 13.md",
     "Day 11.md",
     "Day 14.md",
-    "Screenshot From 2026-05-20 10-38-59.png",
     "Day 2.md",
     "topics/Control Registers.md",
     "topics/Paging Modes.md",
