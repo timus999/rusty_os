@@ -110,6 +110,21 @@ impl Writer {
         }
     }
 
+    pub fn delete_char(&mut self) {
+        if self.column_position > 1 {
+            self.column_position -= 1;
+            let row = BUFFER_HEIGHT - 1;
+            let col = self.column_position;
+
+            let blank = ScreenChar {
+                ascii_character: b' ',
+                color_code: self.color_code,
+            };
+
+            self.char_ptr(row, col).write(blank);
+        }
+    }
+
     fn new_line(&mut self) {
         for row in 1..BUFFER_HEIGHT {
             for col in 0..BUFFER_WIDTH {
@@ -136,7 +151,7 @@ impl Writer {
 lazy_static! {
     pub static ref WRITER: Mutex<Writer> = Mutex::new(Writer {
         column_position: 0,
-        color_code: ColorCode::new(Color::Green, Color::Black),
+        color_code: ColorCode::new(Color::White, Color::Black),
         buffer: unsafe { VolatilePtr::new(NonNull::new_unchecked(0xB8000 as *mut Buffer)) }, // use VolatilePtr::new()
     });
 }

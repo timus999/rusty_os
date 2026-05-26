@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "code/fixed_size_allocator.md",
+                "file": "Day 20.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "fixed_size_allocator"
+              "title": "Day 20"
             }
           }
         ],
@@ -214,14 +214,15 @@
   },
   "active": "0949fe57d229f78d",
   "lastOpenFiles": [
-    "Day 19.md",
+    "journey.md",
+    "Day 20.md",
     "code/fixed_size_allocator.md",
+    "Day 19.md",
     "code/linked_list_allocator.md",
     "code/bump_allocator.md",
     "linked-list-allocation.svg",
     "Rusty OS Journey.md",
     "code.md",
-    "journey.md",
     "Untitled.md",
     "code",
     "Day 18.md",
@@ -250,7 +251,6 @@
     "Day 9.md",
     "Day 8.md",
     "Day 7.md",
-    "Day 6.md",
     "_Arch2001_04_SegmentationAndPrivilege_06_CallGates.pdf",
     "_Arch2001_04_SegmentationAndPrivilege_04_SegmentDescriptors.pdf",
     "_Arch2001_04_SegmentationAndPrivilege_03_GDT&LDT.pdf",
