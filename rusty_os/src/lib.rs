@@ -10,6 +10,7 @@ pub mod gdt;
 pub mod interrupts;
 pub mod memory;
 pub mod serial;
+pub mod shell;
 pub mod vga_buffer;
 use core::panic::PanicInfo;
 
@@ -34,6 +35,7 @@ pub fn exit_qemu(exit_code: QemuExitCode) {
 pub fn hlt_loop() -> ! {
     loop {
         x86_64::instructions::hlt();
+        shell::tick();
     }
 }
 

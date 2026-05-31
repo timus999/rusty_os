@@ -65,3 +65,35 @@ fn many_boxes() {
         assert_eq!(*x, i);
     }
 }
+
+#[test_case]
+fn string_alloc() {
+    let s = alloc::string::String::from("hello");
+    assert_eq!(s, alloc::string::String::from("hello"));
+}
+
+pub struct MyStruct {
+    input: String,
+}
+
+use alloc::string::String;
+impl MyStruct {
+    pub fn new() -> Self {
+        MyStruct {
+            input: String::new(),
+        }
+    }
+}
+
+#[test_case]
+fn struct_alloc() {
+    let s = MyStruct::new();
+    assert!(true);
+}
+
+#[test_case]
+fn string_op() {
+    let mut s = String::new();
+    s.push('s');
+    assert_eq!(String::from('s'), s);
+}

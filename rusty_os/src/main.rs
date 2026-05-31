@@ -13,13 +13,14 @@ extern crate alloc;
 use alloc::{boxed::Box, rc::Rc, vec, vec::Vec};
 entry_point!(kernel_main);
 
+#[unsafe(no_mangle)]
 fn kernel_main(boot_info: &'static BootInfo) -> ! {
     rusty_os::init();
 
     #[cfg(test)]
     test_main();
 
-    print!(">");
+    print!("> ");
 
     rusty_os::hlt_loop();
 }

@@ -146,6 +146,14 @@ impl Writer {
             self.char_ptr(row, col).write(blank);
         }
     }
+
+    fn clear_screen(&mut self) {
+        for row in 0..BUFFER_HEIGHT {
+            self.clear_row(row);
+        }
+
+        self.column_position = 1;
+    }
 }
 
 lazy_static! {
@@ -156,6 +164,12 @@ lazy_static! {
     });
 }
 
+pub fn clear_screen() {
+    WRITER.lock().clear_screen();
+}
+pub fn backspace() {
+    WRITER.lock().delete_char();
+}
 #[macro_export]
 macro_rules! print {
     ($($arg:tt)*) => ($crate::vga_buffer::_print(format_args!($($arg)*)));
