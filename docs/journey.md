@@ -1,24 +1,30 @@
 ### This is my journey from Day 1
 
-[[Day 1]]
-[[Day 2]]
-[[Day 3]]
-[[Day 4]]
-[[Day 5]]
-[[Day 6]]
-[[Day 7]]
-[[Day 8]]
-[[Day 9]]
-[[Day 10]]
-[[Day 11]]
-[[Day 12]]
-[[Day 13]]
-[[Day 14]]
-[[Day 15]]
-[[Day 16]]
-[[Day 17]]
-[[Day 18]]
-[[Day 19]]
+### Bare Bones
+
+[A Freestanding Rust Binary](freestanding_rust_binary)
+[[minimal_rust_kernel]]
+[[vga_text_mode]]
+[[testing]]
+[[vga_refactor]]
+[[testing_environment]]
+
+### Interrupts
+
+[[interrupts_theory]]
+[[cpu_exceptions]]
+[[double_faults]]
+[[hardware_interrupts]]
+
+### Memory Management
+[[paging_implementations]]
+[[heap_allocation]]
+[[allocator_design]]
+
+### Shell
+[[backspace]]
+
+
 
 
 
